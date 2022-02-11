@@ -93,4 +93,10 @@ abstract class BaseRepository implements RepositoryInterface
 
         return $result;
     }
+
+    public function getItemCheckUnique($id){
+        $result = $this->model->whereNotIn('id', [$id])->get();
+
+        return $result;
+    }
 }

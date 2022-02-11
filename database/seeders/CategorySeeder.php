@@ -17,33 +17,31 @@ class CategorySeeder extends Seeder
         $data = [
             [
                 'id' => '1',
-                'name' => 'Cây cảnh',
-                'slug' => 'cay-canh',
+                'name' => 'Rao vặt',
+                'slug' => 'rao-vat',
                 'status' => '1',
+                'level' => '0',
             ],
             [
                 'id' => '2',
-                'name' => 'Hoa kiểng',
-                'slug' => 'hoa-kieng',
+                'name' => 'Phụ kiện',
+                'slug' => 'phu-kien',
                 'status' => '1',
+                'level' => '0',
             ],
             [
                 'id' => '3',
-                'name' => 'Chậu cảnh',
-                'slug' => 'chau-canh',
+                'name' => 'Hạt giống',
+                'slug' => 'hat-giong',
                 'status' => '1',
+                'level' => '0',
             ],
             [
                 'id' => '4',
-                'name' => 'Cây giống',
-                'slug' => 'cay-giong',
+                'name' => 'Cá giống',
+                'slug' => 'ca-giong',
                 'status' => '1',
-            ],
-            [
-                'id' => '5',
-                'name' => 'Cá kiểng',
-                'slug' => 'ca-kieng',
-                'status' => '1',
+                'level' => '0',
             ]
         ];
 

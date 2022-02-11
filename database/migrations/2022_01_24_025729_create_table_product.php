@@ -28,10 +28,10 @@ class CreateTableProduct extends Migration
             $table->string('type')->nullable(); //vip/thường
             $table->dateTime('start_day')->nullable(); // ngày bắt đầu
             $table->dateTime('end_day')->nullable(); // ngày kết thúc
+            $table->tinyInteger('status')->default(0);
             $table->text('seo_title')->nullable();
             $table->text('seo_keywords')->nullable();
             $table->text('seo_description')->nullable();
-            $table->tinyInteger('status')->default(0);
             $table->timestamps();
         });
     }

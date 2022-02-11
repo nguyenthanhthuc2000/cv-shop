@@ -18,6 +18,9 @@ class CreateTableService extends Migration
             $table->string('name');
             $table->string('slug');
             $table->tinyInteger('status')->default(0);
+            $table->text('seo_title')->nullable();
+            $table->text('seo_keywords')->nullable();
+            $table->text('seo_description')->nullable();
             $table->timestamps();
         });
     }

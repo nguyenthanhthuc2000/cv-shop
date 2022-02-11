@@ -58,4 +58,10 @@ interface RepositoryInterface
      * @return mixed
      */
     public function findByAttributes($attributes);
+
+    /**
+     * @param $id
+     * @return mixed
+     */
+    public function getItemCheckUnique($id);
 }

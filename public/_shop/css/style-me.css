@@ -30,7 +30,7 @@
   border-bottom-right-radius: 5px;
 }
 
-.new-price{    
+.new-price{
   font-size: 30px;
     font-weight: 500;
     color: #e74c3c;}
@@ -55,7 +55,7 @@
 .mua-ngay button{    border-radius: 30px;}
 .sanphamgoiy{padding-top: 20px;}
 .cat-nav-head .icon-search{padding-top: 2px;}
-.top-bettwen .list-main li{    
+.top-bettwen .list-main li{
   text-align: center;
     width: 100%;
   }
@@ -68,6 +68,10 @@
     height: 450px;
     object-fit: cover;
   }
-  .slick-tieu-chi img{    border: 1px solid;}
+  .slick-tieu-chi img{
+      margin: 5px;
+      border-radius: 20px;
+      box-shadow: 0px 0px 5px 0px #cacacad1;
+  }
   .banner-tieu-chi{padding: 0px 10px;}
   .container-tc{text-align: -webkit-center;}

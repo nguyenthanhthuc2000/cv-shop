@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Article extends Model
 {
     use HasFactory;
+    protected $table = 'article';
+    protected $guarded = [];
+    public $timestamps = true;
+    protected $perPage = 8;
 }

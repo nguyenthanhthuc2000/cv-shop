@@ -19,7 +19,11 @@ class CreateTableCategory extends Migration
             $table->string('slug');
             $table->string('photo')->nullable();
             $table->integer('parent_id')->nullable();
+            $table->integer('level')->nullable();
             $table->tinyInteger('status')->default(0);
+            $table->text('seo_title')->nullable();
+            $table->text('seo_keywords')->nullable();
+            $table->text('seo_description')->nullable();
             $table->timestamps();
         });
     }

@@ -1,5 +1,7 @@
 <?php
 use Illuminate\Support\Str;
+use Illuminate\Http\File;
+use Illuminate\Support\Facades\Auth;
 
 /**
  * @param $title
@@ -14,7 +16,7 @@ function slug($title) {
  * @param $time
  * @return false|string
  */
-function formatTime($time){
+function timeFormat($time){
     return date_format($time, 'd-m-Y');
 }
 
@@ -22,7 +24,7 @@ function formatTime($time){
  * @param $number
  * @return string
  */
-function formatNumber($number){
+function numberFormat($number){
     return number_format($number, 0, ',', '.');
 }
 
@@ -46,4 +48,26 @@ function encryptDecrypt($string, $action = 'encrypt')
         $output = openssl_decrypt(base64_decode($string), $encrypt_method, $key, 0, $iv); // băm ngược
     }
     return $output;
+}
+
+function getImage($image, $direction = 'product'){
+    $no = 'images/noimage.png';
+    $urlImage = 'uploads/'.$direction.'/'.$image;
+    if (File::exists(public_path() . $urlImage)) {
+        return asset($urlImage);
+    }
+    return asset($no);
+}
+
+function checkAdmin(){
+    // 4 nv
+    // 5 ad
+    if(Auth::check()){
+        $level = Auth::user()->level;
+        if(in_array($level, [4, 5])){
+            return true;
+        }
+        return false;
+    }
+    return false;
 }
