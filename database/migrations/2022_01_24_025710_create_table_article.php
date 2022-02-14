@@ -15,12 +15,14 @@ class CreateTableArticle extends Migration
     {
         Schema::create('article', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('slug');
+            $table->text('name');
+            $table->text('slug');
+            $table->text('author');
             $table->text('content')->nullable();
             $table->string('code', 15)->nullable();
             $table->text('desc')->nullable();
             $table->string('type', 30)->nullable();
+            $table->integer('crawl')->default(0); // 1 crawl // 0 user
             $table->string('photo')->nullable();
             $table->tinyInteger('status')->default(0);
             $table->timestamps();

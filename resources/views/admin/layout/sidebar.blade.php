@@ -5,19 +5,19 @@
         </a>
 
 
-        <li class="sidebar-item active">
+        <li class="sidebar-item">
             <a class="sidebar-link" href="{{ route('admin.index') }}">
                 <i class="align-middle" data-feather="coffee"></i> <span class="align-middle">Tổng quan</span>
             </a>
         </li>
 
-        <ul class="sidebar-nav">
+        <ul class="sidebar-nav main-menu">
             <li class="sidebar-header">
                 Quản lí
             </li>
 
             <li class="sidebar-item ">
-                <a class="sidebar-link" href="index.html">
+                <a class="sidebar-link" href="{{ route('product.index') }}">
                     <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Sản phẩm</span>
                 </a>
             </li>
@@ -48,8 +48,8 @@
                     <i class="align-middle" data-feather="briefcase"></i> <span class="align-middle">Bài viết</span>
                 </a>
                 <ul id="bv" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                    <li class="sidebar-item"><a class="sidebar-link" href="ui-alerts.html">Dịch vụ</a></li>
-                    <li class="sidebar-item"><a class="sidebar-link" href="ui-buttons.html">Chia sẻ</a></li>
+                    <li class="sidebar-item"><a class="sidebar-link" href="{{ route('service.manage') }}">Dịch vụ</a></li>
+                    <li class="sidebar-item"><a class="sidebar-link" href="{{ route('news.manage') }}">Chia sẻ</a></li>
                 </ul>
             </li>
             <li class="sidebar-header">
@@ -63,6 +63,8 @@
                 <ul id="ui" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
                     <li class="sidebar-item"><a class="sidebar-link" href="ui-alerts.html">Slider</a></li>
                     <li class="sidebar-item"><a class="sidebar-link" href="ui-buttons.html">Banner</a></li>
+                    <li class="sidebar-item"><a class="sidebar-link" href="ui-buttons.html">Logo header</a></li>
+                    <li class="sidebar-item"><a class="sidebar-link" href="ui-buttons.html">Logo footer</a></li>
                 </ul>
             </li>
 

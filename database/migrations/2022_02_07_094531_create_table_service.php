@@ -17,6 +17,8 @@ class CreateTableService extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('slug');
+            $table->string('photo');
+            $table->longText('content');
             $table->tinyInteger('status')->default(0);
             $table->text('seo_title')->nullable();
             $table->text('seo_keywords')->nullable();

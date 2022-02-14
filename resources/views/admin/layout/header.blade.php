@@ -12,7 +12,7 @@
                 </a>
 
                 <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-toggle="dropdown">
-                   <span class="text-dark">Charles Hall</span>
+                   <span class="text-dark">{{ Auth::user()->name }}</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
                     <a class="dropdown-item" href="#"><i class="align-middle mr-1" data-feather="user"></i> Thông tin</a>

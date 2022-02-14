@@ -6,6 +6,22 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
+    public function getCategory(Request $request){
+        $id = encryptDecrypt($request->id, 'decrypt');
+        $attributes = [
+            'parent_id' => $id,
+            'status' => 1
+        ];
+        $category2 = $this->categoryRepo->getByAttributesAll($attributes);
+        if($category2){
+            $output = view('admin.page.product.component.category2', compact('category2'));
+
+            return $output;
+        }
+
+
+    }
+
     /**
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
@@ -16,8 +32,10 @@ class CategoryController extends Controller
             'status' => $request->status
         ];
         if($this->categoryRepo->update($id, $attributes)){
+
             return response()->json(['status' => 200]);
         }
+
         return response()->json(['status' => 500]);
     }
 
@@ -110,19 +128,25 @@ class CategoryController extends Controller
             //CHECK NAME
             $slugs = $this->categoryRepo->getItemCheckUnique($id)->pluck('slug')->toArray();
             if(in_array(slug($request->name), $slugs)){
+
                 return Redirect()->back()->with('name', 'Tên danh mục đã tồn tại')->withInput();
             }
+
             $query = $this->categoryRepo->update($id, $data);
             if($query){
                 if($request->level == 1){
+
                     return redirect()->route('category1.index')->with('success', 'Cập nhật danh mục thành công!');
                 }
+
                 return redirect()->route('category2.index')->with('success', 'Cập nhật danh mục thành công!');
             }
         }
         if($request->level == 1){
+
             return redirect()->route('category1.index')->with('error', 'Vui lòng thử lại sau!');
         }
+
         return redirect()->route('category2.index')->with('error', 'Vui lòng thử lại sau!');
 
     }
@@ -149,8 +173,10 @@ class CategoryController extends Controller
             }
             $route = 'category.update';
             $categorys = $this->categoryRepo->getByAttributes($attributes);
+
             return view('admin.page.category.form', compact('level','categorys', 'route', 'cat'));
         }
+
         return back();
 
     }

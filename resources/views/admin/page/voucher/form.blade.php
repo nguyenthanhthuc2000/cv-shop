@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label class="form-label">Tên mã giảm giá
+                        <label class="form-label">Tên mã giảm giá <span style="color:red;">*</span>
                         </label>
                         <input type="text" class="form-control" name="name" value="{{ isset($voucher) ? $voucher->name : '' }}" placeholder="Nhập tên mã giảm giá">
                         @error('name')
@@ -20,7 +20,7 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Mã giảm giá(max 15 kí tự | Không dấu dính liền)
+                        <label class="form-label">Mã giảm giá(max 15 kí tự | Không dấu dính liền) <span style="color:red;">*</span>
                         </label>
                         <input type="text" class="form-control" name="code" value="{{ isset($voucher) ? $voucher->code : '' }}" placeholder="Nhập Mã giảm giá">
                         @error('code')
@@ -33,7 +33,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="inputState">Hình thức giảm
+                        <label for="inputState">Hình thức giảm <span style="color:red;">*</span>
                         </label>
                         <select id="inputState" class="form-control" name="type">
                             <option value="0"
@@ -56,7 +56,7 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Số giảm
+                        <label class="form-label">Số giảm <span style="color:red;">*</span>
                         </label>
                         <input type="number" onkeypress="return isNumberKey(event)" class="form-control" name="number" value="{{ isset($voucher) ? $voucher->number : '' }}" placeholder="Nhập số giảm giá">
                         @error('number')

@@ -11,5 +11,5 @@ class Article extends Model
     protected $table = 'article';
     protected $guarded = [];
     public $timestamps = true;
-    protected $perPage = 8;
+    protected $perPage = 16;
 }

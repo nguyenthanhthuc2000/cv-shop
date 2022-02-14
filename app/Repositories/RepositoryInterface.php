@@ -64,4 +64,11 @@ interface RepositoryInterface
      * @return mixed
      */
     public function getItemCheckUnique($id);
+
+    /**
+     * @param $id
+     * @param $slug
+     * @return mixed
+     */
+    public function checkSlug($id, $slug);
 }

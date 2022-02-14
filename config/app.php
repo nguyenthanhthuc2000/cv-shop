@@ -177,6 +177,9 @@ return [
         App\Providers\RouteServiceProvider::class,
          App\Providers\ViewServiceProvider::class,
 
+        //        IMPORT
+        Weidner\Goutte\GoutteServiceProvider::class,
+
     ],
 
     /*
@@ -231,6 +234,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        //IMPORT
+        'Goutte' => Weidner\Goutte\GoutteFacade::class,
 
     ],
 

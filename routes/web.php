@@ -38,15 +38,46 @@ Route::middleware(['auth'])->group(function () {
             Route::post('/chinh-sua-danh-muc/{id}', [CategoryController::class, 'update'])->name('category.update');
             Route::post('/cap-nhat-trang-thai-danh-muc', [CategoryController::class, 'updateStatus'])->name('category.update.status');
             Route::get('/xoa-danh-muc/{id}', [CategoryController::class, 'destroy'])->name('category.destroy');
+            Route::post('/get-category', [CategoryController::class, 'getCategory'])->name('category.get.category');
 
             //MA GIAM GIA
-            Route::get('/ma-giam-gia', [VoucherController::class, 'index'])->name('voucher.index');
+            Route::get('/voucher', [VoucherController::class, 'index'])->name('voucher.index');
             Route::post('/cap-nhat-trang-thai-voucher', [VoucherController::class, 'updateStatus'])->name('voucher.update.status');
             Route::get('/chinh-sua-voucher/{id}', [VoucherController::class, 'edit'])->name('voucher.edit');
             Route::get('/xoa-voucher/{id}', [VoucherController::class, 'destroy'])->name('voucher.destroy');
             Route::get('/them-moi-voucher', [VoucherController::class, 'create'])->name('voucher.create');
             Route::post('/store-voucher', [VoucherController::class, 'store'])->name('voucher.store');
             Route::post('/update-voucher/{id}', [VoucherController::class, 'update'])->name('voucher.update');
+
+            //SAN PHAM
+            Route::get('/quan-li-san-pham', [ProductController::class, 'index'])->name('product.index');
+            Route::post('/cap-nhat-trang-thai-san-pham', [ProductController::class, 'updateStatus'])->name('product.update.status');
+            Route::post('/cap-nhat-highlights-san-pham', [ProductController::class, 'updateHighLights'])->name('product.update.highlights');
+            Route::get('/chinh-sua-san-pham/{id}', [ProductController::class, 'edit'])->name('product.edit');
+            Route::get('/xoa-san-pham/{id}', [ProductController::class, 'destroy'])->name('product.destroy');
+            Route::get('/them-moi-san-pham', [ProductController::class, 'create'])->name('product.create');
+            Route::post('/store-san-pham', [ProductController::class, 'store'])->name('product.store');
+            Route::post('/update-san-pham/{id}', [ProductController::class, 'update'])->name('product.update');
+
+            //CHIA SE
+            Route::get('/crawl/cayvahoa', [ArticleController::class, 'crawlCayvahoa'])->name('crawl.cayvahoa');
+            //NEWS
+            Route::get('/quan-li-bai-viet', [ArticleController::class, 'index'])->name('news.manage');
+            Route::post('/cap-nhat-trang-thai-tin-tuc', [ArticleController::class, 'updateStatus'])->name('news.update.status');
+            Route::get('/chinh-sua-tin-tuc/{id}', [ArticleController::class, 'edit'])->name('news.edit');
+            Route::get('/xoa-tin-tuc/{id}', [ArticleController::class, 'destroy'])->name('news.destroy');
+            Route::get('/them-moi-tin-tuc', [ArticleController::class, 'create'])->name('news.create');
+            Route::post('/store-tin-tuc', [ArticleController::class, 'store'])->name('news.store');
+            Route::post('/update-tin-tuc/{id}', [ArticleController::class, 'update'])->name('news.update');
+
+            //NEWS
+            Route::get('/quan-li-dich-vu', [ServiceController::class, 'index'])->name('service.manage');
+            Route::post('/cap-nhat-trang-thai-dich-vu', [ServiceController::class, 'updateStatus'])->name('service.update.status');
+            Route::get('/chinh-sua-dich-vu/{id}', [ServiceController::class, 'edit'])->name('service.edit');
+            Route::get('/xoa-dich-vu/{id}', [ServiceController::class, 'destroy'])->name('service.destroy');
+            Route::get('/them-moi-dich-vu', [ServiceController::class, 'create'])->name('service.create');
+            Route::post('/store-dich-vu', [ServiceController::class, 'store'])->name('service.store');
+            Route::post('/update-dich-vu/{id}', [ServiceController::class, 'update'])->name('service.update');
 
             //SETTING
             Route::get('/cau-hinh-chung', [AdminController::class, 'setting'])->name('admin.setting');

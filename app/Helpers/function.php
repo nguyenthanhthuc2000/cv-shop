@@ -1,7 +1,27 @@
 <?php
 use Illuminate\Support\Str;
-use Illuminate\Http\File;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
+
+function getImageCrawl($image, $crawl , $direction = 'news'){
+
+    if($crawl == 0){
+        $urlImage = 'uploads/'.$direction.'/'.$image;
+        if (file_exists(public_path($urlImage))) {
+
+            return asset($urlImage);
+        }
+        return 'images/noimage.png';
+    }
+    return $image;
+}
+
+/**
+ * @return false|string
+ */
+function randomCode(){
+    return substr(md5(microtime()),rand(0,5), 7);
+}
 
 /**
  * @param $title
@@ -47,15 +67,22 @@ function encryptDecrypt($string, $action = 'encrypt')
     } else if ($action == 'decrypt') {
         $output = openssl_decrypt(base64_decode($string), $encrypt_method, $key, 0, $iv); // băm ngược
     }
+
     return $output;
 }
 
 function getImage($image, $direction = 'product'){
     $no = 'images/noimage.png';
-    $urlImage = 'uploads/'.$direction.'/'.$image;
-    if (File::exists(public_path() . $urlImage)) {
-        return asset($urlImage);
+    if($image){
+        $urlImage = 'uploads/'.$direction.'/'.$image;
+        if (file_exists(public_path($urlImage))) {
+
+            return asset($urlImage);
+        }
+
+        return asset($no);
     }
+
     return asset($no);
 }
 
@@ -65,9 +92,12 @@ function checkAdmin(){
     if(Auth::check()){
         $level = Auth::user()->level;
         if(in_array($level, [4, 5])){
+
             return true;
         }
+
         return false;
     }
+
     return false;
 }

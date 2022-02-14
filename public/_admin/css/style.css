@@ -23,7 +23,7 @@
 }
 
 /*===========HEIGHT INPUT*/
-input.form-control{
+input.form-control, select.form-control{
     height: calc(2.8125rem + 2px) !important;
 }
 .form-control{

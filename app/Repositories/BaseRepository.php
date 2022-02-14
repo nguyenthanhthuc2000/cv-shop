@@ -99,4 +99,9 @@ abstract class BaseRepository implements RepositoryInterface
 
         return $result;
     }
+
+    public function checkSlug($id, $slug){
+
+        return $this->model->whereNotIn('id', [$id])->where('slug', $slug)->first();
+    }
 }

@@ -22,7 +22,7 @@
                         <div class="card-body">
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label for="inputEmail4">Email</label>
+                                    <label for="inputEmail4">Email <span style="color:red;">*</span></label>
                                     <input type="email" name="email" class="form-control" id="inputEmail4"
                                            value="{{ old('email') ? old('email') : $setting->email }}" placeholder="Nhập Email">
                                     @error('email')
@@ -30,7 +30,7 @@
                                     @enderror
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label class="form-label">Địa chỉ</label>
+                                    <label class="form-label">Địa chỉ <span style="color:red;">*</span></label>
                                     <input type="text" name="address" class="form-control"
                                            value="{{ old('address') ? old('address') : $setting->address }}" placeholder="Nhập Địa chỉ">
                                     @error('address')
@@ -40,7 +40,7 @@
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label class="form-label">Tên miền</label>
+                                    <label class="form-label">Tên miền <span style="color:red;">*</span></label>
                                     <input type="text" name="domain" class="form-control" value="{{old('domain') ? old('domain') : $setting->domain }}"
                                            placeholder="Nhập Domain">
                                       @error('domain')
@@ -48,7 +48,7 @@
                                     @enderror
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label class="form-label">Tên website</label>
+                                    <label class="form-label">Tên website <span style="color:red;">*</span></label>
                                     <input type="text" name="name" class="form-control" value="{{ old('name') ? old('name') : $setting->name }}"
                                            placeholder="Nhập Tên website">
                                     @error('name')
@@ -58,7 +58,7 @@
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label class="form-label">Slogan</label>
+                                    <label class="form-label">Slogan <span style="color:red;">*</span></label>
                                     <input type="text" name="slogan" class="form-control"
                                            value="{{ old('slogan') ? old('slogan') : $setting->slogan }}"
                                            placeholder="Nhập Slogan">
@@ -67,7 +67,7 @@
                                     @enderror
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label class="form-label">Thời gian hoạt động</label>
+                                    <label class="form-label">Thời gian mở cửa <span style="color:red;">*</span></label>
                                     <input type="text" name="open_time" class="form-control" value="{{ old('open_time') ? old('open_time') : $setting->open_time }}"
                                            placeholder="Nhập Thời gian hoạt động">
                                       @error('open_time')
@@ -77,7 +77,7 @@
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-4">
-                                    <label class="form-label">Zalo</label>
+                                    <label class="form-label">Zalo <span style="color:red;">*</span></label>
                                     <input type="text" name="zalo" class="form-control" value="{{ old('zalo') ? old('zalo') : $setting->zalo }}"
                                            placeholder="Nhập Zalo">
                                      @error('zalo')
@@ -85,7 +85,7 @@
                                     @enderror
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label class="form-label">Điện thoại 1</label>
+                                    <label class="form-label">Điện thoại 1 <span style="color:red;">*</span></label>
                                     <input type="text" name="hotline_1" class="form-control" value="{{ old('hotline_1') ? old('hotline_1') : $setting->hotline_1 }}"
                                            placeholder="Nhập Điện thoại 1">
                                     @error('hotline_1')
@@ -93,7 +93,7 @@
                                     @enderror
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label class="form-label">Điện thoại 2</label>
+                                    <label class="form-label">Điện thoại 2 <span style="color:red;">*</span></label>
                                     <input type="text" name="hotline_2" class="form-control" value="{{ old('hotline_2') ? old('hotline_2') : $setting->hotline_2 }}"
                                            placeholder="Nhập Điện thoại 2">
                                      @error('hotline_2')
