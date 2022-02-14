@@ -117,6 +117,7 @@ class ArticleController extends Controller
                     'content' => $content,
                     'type' => 'chia-se',
                     'status' => 1,
+                    'crawl' => 1
                 ];
 
                 $check = $this->articleRepo->findByAttributes(['name' => $title]);
