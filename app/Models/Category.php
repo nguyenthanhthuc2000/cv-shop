@@ -11,7 +11,7 @@ class Category extends Model
     protected $table = 'category';
     protected $guarded = [];
     public $timestamps = true;
-    protected $perPage = 2;
+    protected $perPage = 8;
 
     public function categoryParent(){
         return $this->hasOne(Category::class, 'id', 'parent_id');

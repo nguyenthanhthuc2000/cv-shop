@@ -273,7 +273,7 @@ class CategoryController extends Controller
             ];
         }
         $route = 'category.store';
-        $categorys = $this->categoryRepo->getByAttributes($attributes);
+        $categorys = $this->categoryRepo->getByAttributesAll($attributes);
 
         return view('admin.page.category.form', compact('level','categorys', 'route'));
     }
