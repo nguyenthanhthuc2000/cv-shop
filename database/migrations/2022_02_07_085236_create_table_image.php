@@ -17,7 +17,9 @@ class CreateTableImage extends Migration
             $table->increments('id');
             $table->integer('product_id')->nullable();
             $table->string('type')->nullable();
-            $table->string('link')->nullable();
+            $table->text('desc_photo')->nullable();
+            $table->text('photo')->nullable();
+            $table->text('link')->nullable();
             $table->tinyInteger('status')->default(0);
             $table->timestamps();
         });

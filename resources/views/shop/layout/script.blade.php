@@ -33,6 +33,7 @@
 <script src="{{ asset('_shop/js/active.js')}}"></script>
 <!-- Slick JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+<script src="{{asset('vendor/js/sweetalert2.min.js')}}"></script>
 <script src="{{ asset('_shop/js/script.js')}}"></script>
 
 

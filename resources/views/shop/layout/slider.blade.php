@@ -1,24 +1,23 @@
-
 <div id="demo" class="carousel slide" data-ride="carousel">
 
     <!-- Indicators -->
     <ul class="carousel-indicators">
-        <li data-target="#demo" data-slide-to="0" class="active"></li>
-        <li data-target="#demo" data-slide-to="1"></li>
-        <li data-target="#demo" data-slide-to="2"></li>
+        <?php $j = 0; ?>
+        @foreach($sliders as $key => $sl)
+            <li data-target="#demo" data-slide-to="{{$j}}" class=" @if($j==0) active @endif "></li>
+            <?php $j++; ?>
+        @endforeach
     </ul>
 
     <!-- The slideshow -->
     <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="{{asset('_shop/images/slider.jpg')}}" alt="Los Angeles">
-        </div>
-        <div class="carousel-item">
-            <img src="{{asset('_shop/images/slider.jpg')}}" alt="Chicago">
-        </div>
-        <div class="carousel-item">
-            <img src="{{asset('_shop/images/slider.jpg')}}" alt="New York">
-        </div>
+        <?php $i = 0; ?>
+        @foreach($sliders as $key => $slider)
+            <div class="carousel-item @if($i==0) active @endif">
+                <img src="{{URL::to(getImage($slider->photo, 'image') )}}" alt="{{$slider->name}}">
+            </div>
+            <?php $i++; ?>
+        @endforeach
     </div>
 
     <!-- Left and right controls -->
@@ -29,5 +28,6 @@
         <span class="carousel-control-next-icon"></span>
     </a>
 
+</div>
 </div>
 <!--/ End Slider Area -->

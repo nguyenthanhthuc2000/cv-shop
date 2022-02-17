@@ -14,6 +14,12 @@ class Category extends Model
     protected $perPage = 8;
 
     public function categoryParent(){
+
         return $this->hasOne(Category::class, 'id', 'parent_id');
+    }
+
+    public function childCategories(){
+
+        return $this->hasMany(Category::class, 'parent_id', 'id');
     }
 }

@@ -9,6 +9,42 @@ use File;
 
 class ProductController extends Controller
 {
+    //SHOP
+    public function getDetailProduct($slug){
+        $product = $this->productRepo->getItemsBySlug($slug);
+        if($product){
+            $products =  $this->productRepo->getProductInvolve($product->category1_id, $product->id);
+
+            return view('shop.page.product.detail', compact('product', 'products'));
+        }
+
+    }
+
+    /**
+     * @param $slug
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|void
+     */
+    public function getProductByCat($slug){
+        $cat = $this->categoryRepo->getItemsBySlug($slug);
+        if($cat){
+            $titlePage = $cat->name;
+            if($cat->level == 1){
+                $attributes = [
+                    'category1_id' => $cat->id
+                ];
+            }
+            else{
+                $attributes = [
+                    'category2_id' => $cat->id
+                ];
+            }
+            $products = $this->productRepo->getByAttributes($attributes);
+
+            return view('shop.page.product.list', compact('products', 'titlePage'));
+        }
+
+    }
+
     //ADMIN
     /**
      * @param $id
@@ -52,7 +88,6 @@ class ProductController extends Controller
                     'quantily_sold' => ['required', 'numeric',  'digits_between:1,12'],
                     'made_in' => ['required', 'max:30'],
                     'category1_id' => 'required',
-                    'category2_id' => 'required',
                 ]
             );
             if ($validator->fails()) {
@@ -203,7 +238,6 @@ class ProductController extends Controller
                 'photo' => ['required', 'mimes:jpg,png'],
                 'made_in' => ['required', 'max:30'],
                 'category1_id' => 'required',
-                'category2_id' => 'required',
             ]
         );
         if ($validator->fails()) {

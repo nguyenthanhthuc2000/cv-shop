@@ -61,10 +61,11 @@
                     <i class="align-middle" data-feather="briefcase"></i> <span class="align-middle">Hình ảnh</span>
                 </a>
                 <ul id="ui" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                    <li class="sidebar-item"><a class="sidebar-link" href="ui-alerts.html">Slider</a></li>
-                    <li class="sidebar-item"><a class="sidebar-link" href="ui-buttons.html">Banner</a></li>
-                    <li class="sidebar-item"><a class="sidebar-link" href="ui-buttons.html">Logo header</a></li>
-                    <li class="sidebar-item"><a class="sidebar-link" href="ui-buttons.html">Logo footer</a></li>
+                    <li class="sidebar-item"><a class="sidebar-link" href="{{ route('image.list', 'album') }}">Album</a></li>
+                    <li class="sidebar-item"><a class="sidebar-link" href="{{ route('image.list', 'slider') }}">Slider</a></li>
+                    <li class="sidebar-item"><a class="sidebar-link" href="{{ route('image.list', 'banner') }}">Banner</a></li>
+                    <li class="sidebar-item"><a class="sidebar-link" href="{{ route('image.type', 'logo-header') }}">Logo header</a></li>
+                    <li class="sidebar-item"><a class="sidebar-link" href="{{ route('image.type', 'logo-footer') }}">Logo footer</a></li>
                 </ul>
             </li>
 

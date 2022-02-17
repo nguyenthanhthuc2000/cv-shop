@@ -9,6 +9,12 @@ class ArticleRepository extends BaseRepository implements ArticleRepositoryInter
     //lấy model tương ứng
     public function getModel()
     {
+
         return new Article();
+    }
+
+    public function getNewBvs(){
+
+        return $this->model->where('status', 1)->orderBy('id', 'DESC')->take(5)->get();
     }
 }

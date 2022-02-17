@@ -51,7 +51,7 @@
                         <!-- Search Form -->
                         <div class="search-top">
                             <form class="search-form">
-                                <input type="text" placeholder="Search here..." name="search">
+                                <input type="text" placeholder="Tìm kiếm..." name="search">
                                 <button value="search" type="submit"><i class="ti-search"></i></button>
                             </form>
                         </div>
@@ -64,7 +64,7 @@
                     <div class="search-bar-top">
                         <div class="search-bar">
                             <form>
-                                <input name="search" class="form-control" placeholder="Search Products Here....." type="search">
+                                <input name="search" class="form-control" placeholder="Tìm kiếm..." type="search">
                                 <button class="btnn"><i class="ti-search"></i></button>
                             </form>
                         </div>
@@ -77,69 +77,24 @@
                             <a href="{{  Auth::check() ? '#' : route('auth.index') }}" class="single-icon"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
                         </div>
                         <div class="sinlge-bar shopping">
-                            <a href="#" class="single-icon"><i class="ti-bag"></i> <span class="total-count">2</span></a>
+                            <a href="#" class="single-icon"><i class="ti-bag"></i> <span class="total-count">0</span></a>
                             <!-- Shopping Item -->
                             <div class="shopping-item">
                                 <div class="dropdown-cart-header">
-                                    <span>2 Items</span>
-                                    <a href="cart.html">View Cart</a>
+                                    <span><span class="total-count">0</span> Items</span>
+                                    <a href="cart.html">Giỏ hàng</a>
                                 </div>
                                 <ul class="shopping-list" style=" height: 200px;overflow-y: scroll;">
                                     <li>
-                                        <a href="#" class="remove" title="Remove this item"><i class="fa fa-remove"></i></a>
-                                        <a class="cart-img" href="#"><img src="https://via.placeholder.com/70x70" alt="#"></a>
-                                        <h4><a href="#">Woman Ring</a></h4>
-                                        <p class="quantity">1x - <span class="amount">$99.00</span></p>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="remove" title="Remove this item"><i class="fa fa-remove"></i></a>
-                                        <a class="cart-img" href="#"><img src="https://via.placeholder.com/70x70" alt="#"></a>
-                                        <h4><a href="#">Woman Ring</a></h4>
-                                        <p class="quantity">1x - <span class="amount">$99.00</span></p>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="remove" title="Remove this item"><i class="fa fa-remove"></i></a>
-                                        <a class="cart-img" href="#"><img src="https://via.placeholder.com/70x70" alt="#"></a>
-                                        <h4><a href="#">Woman Ring</a></h4>
-                                        <p class="quantity">1x - <span class="amount">$99.00</span></p>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="remove" title="Remove this item"><i class="fa fa-remove"></i></a>
-                                        <a class="cart-img" href="#"><img src="https://via.placeholder.com/70x70" alt="#"></a>
-                                        <h4><a href="#">Woman Ring</a></h4>
-                                        <p class="quantity">1x - <span class="amount">$99.00</span></p>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="remove" title="Remove this item"><i class="fa fa-remove"></i></a>
-                                        <a class="cart-img" href="#"><img src="https://via.placeholder.com/70x70" alt="#"></a>
-                                        <h4><a href="#">Woman Ring</a></h4>
-                                        <p class="quantity">1x - <span class="amount">$99.00</span></p>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="remove" title="Remove this item"><i class="fa fa-remove"></i></a>
-                                        <a class="cart-img" href="#"><img src="https://via.placeholder.com/70x70" alt="#"></a>
-                                        <h4><a href="#">Woman Ring</a></h4>
-                                        <p class="quantity">1x - <span class="amount">$99.00</span></p>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="remove" title="Remove this item"><i class="fa fa-remove"></i></a>
-                                        <a class="cart-img" href="#"><img src="https://via.placeholder.com/70x70" alt="#"></a>
-                                        <h4><a href="#">Woman Ring</a></h4>
-                                        <p class="quantity">1x - <span class="amount">$99.00</span></p>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="remove" title="Remove this item"><i class="fa fa-remove"></i></a>
-                                        <a class="cart-img" href="#"><img src="https://via.placeholder.com/70x70" alt="#"></a>
-                                        <h4><a href="#">Woman Necklace</a></h4>
-                                        <p class="quantity">1x - <span class="amount">$35.00</span></p>
+                                       Không có dữ liệu
                                     </li>
                                 </ul>
                                 <div class="bottom">
                                     <div class="total">
-                                        <span>Total</span>
-                                        <span class="total-amount">$134.00</span>
+                                        <span>Tổng</span>
+                                        <span class="total-amount">0</span>
                                     </div>
-                                    <a href="checkout.html" class="btn animate">Checkout</a>
+                                    <a href="checkout.html" class="btn animate">Thanh toán</a>
                                 </div>
                             </div>
                             <!--/ End Shopping Item -->
@@ -162,57 +117,36 @@
                                     <div class="nav-inner">
                                         <ul class="nav main-menu menu navbar-nav">
                                             <li class=""><a href="{{ route('home.index') }}">Trang chủ</a></li>
-{{--                                            <li class="active"><a >Trang chủ</a></li>--}}
-                                            <li class="menu_top"><a href="http://localhost/noithat/san-pham">Rao vặt<i class="ti-angle-down"></i></a>
-                                                <ul class="dropdown">
-                                                    <li><a href="http://localhost/noithat/san-pham/noi-that-van-phong">Nội thất văn phòng
-                                                            <i class=" ti-angle-down "></i>
-                                                        </a>
-                                                        <ul class="dropdown2">
-                                                            <li><a href="http://localhost/noithat/san-pham/ban-hop">Bàn họp</a></li>
-                                                            <li><a href="http://localhost/noithat/san-pham/ghe-van-phong">Ghế văn phòng</a></li>
-                                                            <li><a href="http://localhost/noithat/san-pham/tu-ho-so">Tủ hồ sơ</a></li>
-                                                            <li><a href="http://localhost/noithat/san-pham/ban-giam-doc">Bàn giám đốc</a></li>
-                                                            <li><a href="http://localhost/noithat/san-pham/ban-lam-viec">Bàn làm việc</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="http://localhost/noithat/san-pham/noi-that-spa">Nội thất Spa
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="menu_top"><a href="http://localhost/noithat/san-pham">Phụ kiện<i class="ti-angle-down"></i></a>
-                                                <ul class="dropdown">
-                                                    <li><a href="http://localhost/noithat/san-pham/noi-that-van-phong">Nội thất văn phòng
-                                                            <i class=" ti-angle-down "></i>
-                                                        </a>
-                                                        <ul class="dropdown2">
+                                            @foreach($categories as $cat)
+                                                <?php
+                                                    $categories1 = $cat->childCategories;
+                                                ?>
+                                                    <li class="menu_top">
+                                                    <a href="{{ route('product.cat', $cat->slug) }}">{{ $cat->name }} @if($categories1->count() > 0 ) <i class="ti-angle-down"></i> @endif</a>
+                                                        @if($categories1->count() > 1)
+                                                        <ul class="dropdown">
+                                                            @foreach($categories1 as $cat1)
 
-                                                            <li><a href="http://localhost/noithat/san-pham/ban-hop">Bàn họp</a></li>
-                                                            <li><a href="http://localhost/noithat/san-pham/ghe-van-phong">Ghế văn phòng</a></li>
-                                                            <li><a href="http://localhost/noithat/san-pham/tu-ho-so">Tủ hồ sơ</a></li>
-                                                            <li><a href="http://localhost/noithat/san-pham/ban-giam-doc">Bàn giám đốc</a></li>
-                                                            <li><a href="http://localhost/noithat/san-pham/ban-lam-viec">Bàn làm việc</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="http://localhost/noithat/san-pham/noi-that-spa">Nội thất Spa
+                                                                <?php
+                                                                $categories2 = $cat1->childCategories;
+                                                                ?>
 
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Hạt giống<i class="ti-angle-down"></i></a>
-                                                <ul class="dropdown">
-                                                    <li><a href="{{ route('product.list', 'category') }}">Cây cảnh</a></li>
-                                                    <li><a href="product.html">Cá cảnh</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Cá giống<i class="ti-angle-down"></i></a>
-                                                <ul class="dropdown">
-                                                    <li><a href="{{ route('product.list', 'category') }}">Cây cảnh</a></li>
-                                                    <li><a href="product.html">Cá cảnh</a></li>
-                                                </ul>
-                                            </li>
+                                                            <li><a href="{{ route('product.cat', $cat1->slug) }}">{{ $cat1->name }}
+                                                                    @if($categories2->count() > 0 ) <i class="ti-angle-down"></i> @endif
+                                                                </a>
+                                                                @if($categories2->count() > 1)
+                                                                <ul class="dropdown2">
+                                                                    @foreach($categories2 as $cat2)
+                                                                    <li><a href="{{ route('product.cat', $cat2->slug) }}">{{ $cat2->name }}</a></li>
+                                                                    @endforeach
+                                                                </ul>
+                                                                @endif
+                                                            </li>
+                                                            @endforeach
+                                                        </ul>
+                                                        @endif
+                                                </li>
+                                            @endforeach
                                             <li><a href="#">Dịch vụ <i class="ti-angle-down"></i><span class="new">New</span></a>
                                                 <ul class="dropdown">
                                                     <li><a href="cart.html">Lắp đặt hồ thủy sinh</a></li>

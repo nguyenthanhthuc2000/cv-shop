@@ -5,18 +5,18 @@
 
         <div class="row mb-2 mb-xl-3">
             <div class="col-auto d-none d-sm-block">
-                <h3><strong>Analytics</strong> Dashboard</h3>
+                <h3><strong>Thống kê 30 ngày gần đây</strong> </h3>
             </div>
 
-            <div class="col-auto ml-auto text-right mt-n1">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb bg-transparent p-0 mt-1 mb-0">
-                        <li class="breadcrumb-item"><a href="#">AdminKit</a></li>
-                        <li class="breadcrumb-item"><a href="#">Dashboards</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Analytics</li>
-                    </ol>
-                </nav>
-            </div>
+{{--            <div class="col-auto ml-auto text-right mt-n1">--}}
+{{--                <nav aria-label="breadcrumb">--}}
+{{--                    <ol class="breadcrumb bg-transparent p-0 mt-1 mb-0">--}}
+{{--                        <li class="breadcrumb-item"><a href="#">AdminKit</a></li>--}}
+{{--                        <li class="breadcrumb-item"><a href="#">Dashboards</a></li>--}}
+{{--                        <li class="breadcrumb-item active" aria-current="page">Analytics</li>--}}
+{{--                    </ol>--}}
+{{--                </nav>--}}
+{{--            </div>--}}
         </div>
         <div class="row">
             <div class="col-md-12 d-flex">
@@ -25,7 +25,7 @@
                         <div class="col-md-3 col-6">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title mb-4">Sales</h5>
+                                    <h5 class="card-title mb-4">Truy cập</h5>
                                     <h1 class="display-5 mt-1 mb-3">2.382</h1>
                                     <div class="mb-1">
                                         <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -3.65% </span>
@@ -37,7 +37,7 @@
                         <div class="col-md-3 col-6">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title mb-4">Sales</h5>
+                                    <h5 class="card-title mb-4">Doanh thu sản phẩm</h5>
                                     <h1 class="display-5 mt-1 mb-3">2.382</h1>
                                     <div class="mb-1">
                                         <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -3.65% </span>
@@ -49,7 +49,7 @@
                         <div class="col-md-3 col-6">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title mb-4">Sales</h5>
+                                    <h5 class="card-title mb-4">Đơn hàng</h5>
                                     <h1 class="display-5 mt-1 mb-3">2.382</h1>
                                     <div class="mb-1">
                                         <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -3.65% </span>
@@ -61,7 +61,7 @@
                         <div class="col-md-3 col-6">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title mb-4">Sales</h5>
+                                    <h5 class="card-title mb-4">Doanh thu tin tức</h5>
                                     <h1 class="display-5 mt-1 mb-3">2.382</h1>
                                     <div class="mb-1">
                                         <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -3.65% </span>
@@ -78,7 +78,7 @@
                 <div class="card flex-fill">
                     <div class="card-header">
 
-                        <h5 class="card-title mb-0">Sản phẩm chờ duyệt</h5>
+                        <h5 class="card-title mb-0">Đơn hàng chờ xử lí</h5>
                     </div>
                     <table class="table table-hover my-0">
                         <thead>

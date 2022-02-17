@@ -11,4 +11,14 @@ class ImageRepository extends BaseRepository implements ImageRepositoryInterface
     {
         return new Image();
     }
+
+    public function getNewAlbums(){
+
+        return $this->model->where('status', 1)->where('type', 'album')->orderBy('id', 'DESC')->take(4)->get();
+    }
+
+    public function getNewSliders(){
+
+        return $this->model->where('status', 1)->where('type', 'slider')->orderBy('id', 'DESC')->take(4)->get();
+    }
 }

@@ -75,3 +75,91 @@
   }
   .banner-tieu-chi{padding: 0px 10px;}
   .container-tc{text-align: -webkit-center;}
+
+.bai-viet{
+    padding: 10px;
+}
+.slick-bai-viet{
+    margin: -10px;
+}
+.height367{
+    display: block;
+    object-fit: cover;
+    height: 367px !important;
+}
+
+.album{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 20px;
+    cursor: pointer;
+}
+.album .album-img{
+
+    height: 240px;
+
+    width: 100%;
+}
+.album .album-img img{
+
+    height: 100%;
+
+    width: 100%;
+
+    object-fit: cover;
+}
+.album .album-img:nth-child(1),.album .album-img:nth-child(3){
+    grid-row: span 2;
+    height: 100%;
+}
+.text-split-2{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+}
+.text-split-3{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp:3;
+}
+.text-split-4{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp:4;
+}
+.text-split-1{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+}
+/*===========PHAN TRANG*/
+.paginate-styling{
+    padding: 20px 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+.paginate-styling nav .flex{
+    display: none!important;
+}
+.paginate-styling svg{
+    width: 20px !important;
+}
+
+@media only screen and (max-width: 767px){
+    .album {
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 5px;
+    }
+}

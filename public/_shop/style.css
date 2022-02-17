@@ -1760,7 +1760,10 @@ Version:1.0
   position: relative;
 }
 .single-product .product-img a img {
-  width: 100%;
+    width: 100%;
+    object-fit: cover;
+    min-height: 262.5px !important;
+    max-height: 262.5px !important;
 }
 .single-product .product-img a img.hover-img {
   position: absolute;

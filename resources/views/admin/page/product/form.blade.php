@@ -82,8 +82,8 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputState">Danh mục cấp 2 <span style="color:red;">*</span></label>
-                                    <select id="item" class="form-control category2" name="category2_id" required>
+                                    <label for="inputState">Danh mục cấp 2 </label>
+                                    <select id="item" class="form-control category2" name="category2_id">
                                         <option selected value="" disabled>-- Chọn danh mục cấp 2 --</option>
                                         @if(isset($category2))
                                             @foreach($category2 as $cat2)

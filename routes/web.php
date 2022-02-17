@@ -11,6 +11,8 @@ use App\Http\Controllers\VoucherController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ImageController;
+use App\Http\Controllers\CartController;
 
 //AUTH
 Route::get('/login', [AuthController::class, 'index'])->name('auth.index');
@@ -19,6 +21,17 @@ Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
 
 //TRANG CHU
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
+
+//SAN PHAM
+Route::get('/danh-muc/{catID}', [ProductController::class, 'getProductByCat'])->name('product.cat');
+Route::get('/san-pham/{proID}', [ProductController::class, 'getDetailProduct'])->name('product.detail');
+
+//GIO HANG
+Route::post('/store-cart', [CartController::class, 'storeCart'])->name('cart.store');
+Route::post('/load-cart-ajax', [CartController::class, 'loadCartAjax'])->name('cart.load.ajax');
+
+
+
 Route::get('/san-pham/{catid}', [ProductController::class, 'listProduct'])->name('product.list');
 
 //ADMIN
@@ -78,6 +91,18 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/them-moi-dich-vu', [ServiceController::class, 'create'])->name('service.create');
             Route::post('/store-dich-vu', [ServiceController::class, 'store'])->name('service.store');
             Route::post('/update-dich-vu/{id}', [ServiceController::class, 'update'])->name('service.update');
+
+            //LOGO
+            Route::get('/{type}', [ImageController::class, 'imageType'])->name('image.type');
+            Route::post('/update-hinh-anh/{id}', [ImageController::class, 'update'])->name('image.update');
+
+            //Hinh anh
+            Route::get('/hinh-anh/{typeList}', [ImageController::class, 'listImage'])->name('image.list');
+            Route::get('/them-moi-hinh-anh/{type}', [ImageController::class, 'create'])->name('image.create');
+            Route::post('store-image', [ImageController::class, 'store'])->name('image.store');
+            Route::post('/cap-nhat-trang-thai-hinh-anh', [ImageController::class, 'updateStatus'])->name('image.update.status');
+            Route::get('/xoa-hinh-anh/{id}', [ImageController::class, 'destroy'])->name('image.destroy');
+            Route::get('/chinh-sua-hinh-anh/{id}', [ImageController::class, 'edit'])->name('image.edit');
 
             //SETTING
             Route::get('/cau-hinh-chung', [AdminController::class, 'setting'])->name('admin.setting');
