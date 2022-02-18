@@ -31,7 +31,14 @@ Route::get('/san-pham/{proID}', [ProductController::class, 'getDetailProduct'])-
 Route::post('/store-cart', [CartController::class, 'storeCart'])->name('cart.store');
 Route::post('/load-cart-ajax', [CartController::class, 'loadCartAjax'])->name('cart.load.ajax');
 Route::post('/load-cart-table-ajax', [CartController::class, 'loadCartTableAjax'])->name('cart.table.load.ajax');
+Route::post('/load-cart-total-ajax', [CartController::class, 'loadCartTotalAjax'])->name('cart.total.load.ajax');
+Route::post('/cart-delete-product', [CartController::class, 'cartDeleteProduct'])->name('cart.delete.product');
+Route::post('/update-qty-product', [CartController::class, 'updateQtyProduct'])->name('update.qty.product');
+Route::post('/add-voucher', [CartController::class, 'addVoucher'])->name('voucher.add');
+Route::get('/checkout', [CartController::class, 'checkout'])->name('home.checkout');
 
+
+//HOA DON
 
 
 Route::get('/san-pham/{catid}', [ProductController::class, 'listProduct'])->name('product.list');

@@ -1,7 +1,7 @@
 @if(count($carts) > 0)
     @foreach($carts as $cart)
     <li>
-        <a href="#" class="remove" title="Remove this item" ><i class="fa fa-remove"></i> </a>
+{{--        <a href="#" class="remove" title="Remove this item" ><i class="fa fa-remove"></i> </a>--}}
         <a class="cart-img"><img src="{{ getImage($cart['photo'], 'product') }}" alt="#"></a>
         <h4><a href="{{ route('product.detail', $cart['slug']) }}" class="text-split-1">{{ $cart['name'] }}</a></h4>
         <p class="quantity">{{ $cart['qty'] }}x -

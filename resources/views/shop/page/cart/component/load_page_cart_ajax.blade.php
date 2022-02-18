@@ -39,7 +39,7 @@
                         <td class="qty"><!-- Input Order -->
                             <div class="input-group text-center">
 
-                                <input type="number" name="qty[{{$cart['id']}}]" class="input-number"  min="1" max="100"  value="{{$cart['qty']}}">
+                                <input type="number" data-id="{{ $cart['id'] }}" class="input-number pro-cart-qty"  min="1" max="100"  value="{{$cart['qty']}}">
 
                             </div>
                             <!--/ End Input Order -->
