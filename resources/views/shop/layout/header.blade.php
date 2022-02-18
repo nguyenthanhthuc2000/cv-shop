@@ -91,10 +91,10 @@
                                 </ul>
                                 <div class="bottom">
                                     <div class="total">
-                                        <span>Tổng</span>
-                                        <span class="total-amount">0</span>
+                                        <span>Tổng &nbsp;</span>
+                                        <span class="total-amount-cart-ajax">0</span>
                                     </div>
-                                    <a href="checkout.html" class="btn animate">Thanh toán</a>
+                                    <a href="{{ route('home.cart') }}" class="btn animate">Giỏ hàng</a>
                                 </div>
                             </div>
                             <!--/ End Shopping Item -->
@@ -147,12 +147,12 @@
                                                         @endif
                                                 </li>
                                             @endforeach
-                                            <li><a href="#">Dịch vụ <i class="ti-angle-down"></i><span class="new">New</span></a>
+                                            <li><a href="dich-vu">Dịch vụ <i class="ti-angle-down"></i><span class="new">New</span></a>
                                                 <ul class="dropdown">
                                                     <li><a href="cart.html">Lắp đặt hồ thủy sinh</a></li>
                                                 </ul>
                                             </li>
-                                            <li class=""><a href="#">Tin tức</a></li>
+                                            <li class=""><a href="tin-tuc">Tin tức</a></li>
                                             <li><a href="#">Tài khoản <i class="ti-angle-down"></i></a>
                                                 <ul class="dropdown">
                                                     @if(Auth::check())
@@ -165,6 +165,7 @@
                                                     @else
                                                         <li><a href="{{ route('auth.index') }}">Đăng nhập</a></li>
                                                     @endif
+                                                    <li><a href="{{ route('home.cart') }}">Giỏ hàng</a></li>
                                                 </ul>
                                             </li>
                                         </ul>

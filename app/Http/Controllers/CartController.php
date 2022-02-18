@@ -23,8 +23,6 @@ class CartController extends Controller
                 }
                 $totalCart += $cart['qty'] * $price;
             }
-
-
             return response()->json(['output' => $output, 'status' => 200, 'totalItem' => $totalItem, 'totalCart' =>numberFormat($totalCart)]);
         }
     }
@@ -55,7 +53,7 @@ class CartController extends Controller
                             'name' => $product->name,
                             'price' => $product->price,
                             'price_pro' => $product->price_pro,
-                            'qty' => $data['qty'] + $cart['qty'],
+                            'qty' => round(abs($data['qty']) + $cart['qty']),
                             'photo' => $product->photo,
                         );
                         Session::put('carts', $carts);
@@ -70,7 +68,7 @@ class CartController extends Controller
                         'name' => $product->name,
                         'price' => $product->price,
                         'price_pro' => $product->price_pro,
-                        'qty' => $data['qty'],
+                        'qty' => round(abs($data['qty'])),
                         'photo' => $product->photo,
                     );
                     Session::put('carts', $carts);
@@ -85,7 +83,7 @@ class CartController extends Controller
                     'name' => $product->name,
                     'price' => $product->price,
                     'price_pro' => $product->price_pro,
-                    'qty' => $data['qty'],
+                    'qty' => round(abs($data['qty'])),
                     'photo' => $product->photo,
                 );
                 Session::put('carts', $carts);

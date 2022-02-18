@@ -16,4 +16,9 @@ class HomeController extends Controller
 
         return view('shop.page.index', compact('productsNew', 'productsHL', 'baiviets', 'albums', 'sliders'));
     }
+
+    public function cartHome(){
+
+        return view('shop.page.cart.index_cart');
+    }
 }

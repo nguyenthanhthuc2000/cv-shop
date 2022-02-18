@@ -21,6 +21,7 @@ Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
 
 //TRANG CHU
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
+Route::get('/gio-hang', [HomeController::class, 'cartHome'])->name('home.cart');
 
 //SAN PHAM
 Route::get('/danh-muc/{catID}', [ProductController::class, 'getProductByCat'])->name('product.cat');

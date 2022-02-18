@@ -110,7 +110,7 @@
                                         </div>
                                         <div class="product-action-2">
                                             @if($p->quantily > 0)
-                                                <a title="Thêm vào giỏ hàng" href="#">Mua ngay</a>
+                                                <a title="Thêm vào giỏ hàng" data-id="{{ encryptDecrypt( $p->id ) }}" class="btn-add-cart-list">Mua ngay</a>
                                             @else
                                                 <a title="Sản phẩm đã hết hàng" href="#">Hết hàng</a>
                                             @endif

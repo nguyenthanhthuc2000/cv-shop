@@ -38,7 +38,7 @@
                                                         </div>
                                                         <div class="product-action-2">
                                                             @if($pn->quantily > 0)
-                                                                <a title="Thêm vào giỏ hàng" href="#">Mua ngay</a>
+                                                                <a title="Thêm vào giỏ hàng" data-id="{{ encryptDecrypt( $pn->id ) }}" class="btn-add-cart-list">Mua ngay</a>
                                                             @else
                                                                 <a title="Sản phẩm đã hết hàng" href="#">Hết hàng</a>
                                                             @endif
@@ -90,7 +90,6 @@
                             <div class="product-img">
                                 <a href="{{ route('product.detail', $pHl->slug) }}">
                                     <img class="default-img" src="{{ getImage($pHl->photo, 'product') }}" alt="#">
-{{--                                    <img class="hover-img" src="https://via.placeholder.com/550x600" alt="#">--}}
                                     @if($pHl->highlights == 1)<span class="out-of-stock">Nổi bật</span>@endif
                                 </a>
                                 <div class="button-head">
@@ -100,7 +99,7 @@
                                     </div>
                                     <div class="product-action-2">
                                         @if($pHl->quantily > 0)
-                                        <a title="Thêm vào giỏ hàng" href="#">Mua ngay</a>
+                                        <a title="Thêm vào giỏ hàng" data-id="{{ encryptDecrypt( $pHl->id ) }}" class="btn-add-cart-list">Mua ngay</a>
                                         @else
                                         <a title="Sản phẩm đã hết hàng" href="#">Hết hàng</a>
                                         @endif
