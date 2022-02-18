@@ -3075,12 +3075,12 @@ Version:1.0
 }
 .cart-main .qty .input-number {
     border: 1px solid #eceded;
-    width: 100%;
+    width: 68%;
     text-align: center;
     height: 47px;
     border-radius:0;
     overflow: hidden;
-    padding: 0px 45px;
+    padding: 0px 18px;
 }
 .cart-table tbody .total-amount {
     text-align: center;

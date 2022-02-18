@@ -30,6 +30,7 @@ Route::get('/san-pham/{proID}', [ProductController::class, 'getDetailProduct'])-
 //GIO HANG
 Route::post('/store-cart', [CartController::class, 'storeCart'])->name('cart.store');
 Route::post('/load-cart-ajax', [CartController::class, 'loadCartAjax'])->name('cart.load.ajax');
+Route::post('/load-cart-table-ajax', [CartController::class, 'loadCartTableAjax'])->name('cart.table.load.ajax');
 
 
 

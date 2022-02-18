@@ -7,7 +7,17 @@ use Illuminate\Support\Facades\Session;
 
 class CartController extends Controller
 {
+    public function loadCartTableAjax(){
+        $carts = Session::get('carts');
+        if($carts){
+            $output = view('shop.page.cart.component.load_page_cart_ajax', compact('carts'))->render();
 
+            return response()->json(['output' => $output, 'status' => 200]);
+        }
+    }
+    /**
+     * @return \Illuminate\Http\JsonResponse|void
+     */
     public function loadCartAjax(){
 
         $carts = Session::get('carts');

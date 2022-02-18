@@ -36,6 +36,7 @@
 <script src="{{asset('vendor/js/sweetalert2.min.js')}}"></script>
 <script src="{{ asset('_shop/js/script.js')}}"></script>
 
+@stack('js')
 
 <script type="text/javascript">
 {{--(function() {--}}
