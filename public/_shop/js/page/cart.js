@@ -3,8 +3,8 @@ $.ajaxSetup({
        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
    }
 });
-loadCartTableAjax();
 loadCartTotalAjax();
+loadCartTableAjax();
 
 function loadCartTotalAjax(){
     $.ajax({
