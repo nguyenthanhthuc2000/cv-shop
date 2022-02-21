@@ -74,7 +74,7 @@ $(document).on("click",".delete-product-cart",function() {
 //    alert(id);
 
          $.ajax({
-            url: '/cart-delete-product',
+            url: urssl,
             method:'POST',
             data: {id:id},
             success:function(data){
