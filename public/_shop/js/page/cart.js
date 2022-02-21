@@ -26,8 +26,6 @@ function loadCartTotalAjax(){
 
 }
 
-
-
 function loadCartTableAjax(){
     $.ajax({
         url: window.route('cart.table.load.ajax'),
