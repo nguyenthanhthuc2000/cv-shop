@@ -17,7 +17,6 @@ class CreateTableCustomer extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('phone', 12);
-            $table->text('address')->nullable();
             $table->timestamps();
         });
     }

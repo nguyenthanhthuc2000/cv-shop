@@ -37,6 +37,11 @@ Route::post('/update-qty-product', [CartController::class, 'updateQtyProduct'])-
 Route::post('/add-voucher', [CartController::class, 'addVoucher'])->name('voucher.add');
 Route::get('/checkout', [CartController::class, 'checkout'])->name('home.checkout');
 
+//DON HANG
+
+Route::post('/store', [OrderController::class, 'store'])->name('order.store');
+
+
 
 //HOA DON
 

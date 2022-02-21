@@ -3283,8 +3283,8 @@ Version:1.0
 }
 .shop.checkout .nice-select .list {
     width: 100%;
-    height: 300px;
-    overflow: scroll;
+    height: 200px;
+    overflow-y: scroll;
 }
 .shop.checkout .nice-select .list li{}
 .shop.checkout .nice-select .list li.option{

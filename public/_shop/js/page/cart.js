@@ -3,10 +3,12 @@ $.ajaxSetup({
        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
    }
 });
+
 loadCartTotalAjax();
 loadCartTableAjax();
 
 function loadCartTotalAjax(){
+
     $.ajax({
         url: window.route('cart.total.load.ajax'),
         method:'POST',
@@ -21,6 +23,7 @@ function loadCartTotalAjax(){
             }
         }
     })
+
 }
 
 

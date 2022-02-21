@@ -17,6 +17,7 @@ use App\Repositories\Service\ServiceRepositoryInterface;
 use App\Repositories\User\UserRepositoryInterface;
 use App\Repositories\Voucher\VoucherRepositoryInterface;
 use App\Repositories\Setting\SettingRepositoryInterface;
+use App\Repositories\Customer\CustomerRepositoryInterface;
 
 class Controller extends BaseController
 {
@@ -32,6 +33,7 @@ class Controller extends BaseController
      protected $userRepo;
      protected $voucherRepo;
      protected $settingRepo;
+     protected $customerRepo;
 
     public function __construct(
         ArticleRepositoryInterface $articleRepo,
@@ -43,7 +45,8 @@ class Controller extends BaseController
         ServiceRepositoryInterface $serviceRepo,
         UserRepositoryInterface $userRepo,
         VoucherRepositoryInterface $voucherRepo,
-        SettingRepositoryInterface $settingRepo
+        SettingRepositoryInterface $settingRepo,
+        CustomerRepositoryInterface $customerRepo
     )
     {
         $this->productRepo = $productRepo;
@@ -56,5 +59,6 @@ class Controller extends BaseController
         $this->userRepo = $userRepo;
         $this->voucherRepo = $voucherRepo;
         $this->settingRepo = $settingRepo;
+        $this->customerRepo = $customerRepo;
     }
 }

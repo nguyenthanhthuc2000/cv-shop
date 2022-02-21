@@ -2,12 +2,12 @@
 @section('content')
 
     <div class="container-fluid p-0">
-        @include('admin.layout.alert')
         <div class="title-form d-flex mb-3" style="justify-content: space-between">
             <h3 class=" mb-0">Danh mục cấp {{request()->route()->getName() == 'category1.index' ? '1' : '2' }}</h3>
             <a href="{{ route('category.create', encryptDecrypt($level)) }}" class="btn__border btn__green"><i class="fas fa-plus-circle"></i> Thêm</a>
         </div>
         <div class="row">
+            @include('admin.layout.alert')
             <div class="col-md-12 d-flex">
                 <div class="card flex-fill">
                     <div class="table-responsive">
