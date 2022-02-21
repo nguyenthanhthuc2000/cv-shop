@@ -15,7 +15,7 @@
 
     @routes()
     <script>
-        let urssl = '{{ route('cart.delete.product') }}'
+        let urssl = '{{ route('cart.store') }}'
         Ziggy.url = 'http://nguyenthanhthuc.cf';
     </script>
     <meta name="csrf-token" content="{{ csrf_token() }}">

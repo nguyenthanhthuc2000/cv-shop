@@ -120,7 +120,7 @@ $('.btn-add-cart-list').click(function(){
     let qty = 1;
 
      $.ajax({
-        url: window.route('cart.store'),
+        url: urssl,
         method:'POST',
         data:{id:id, qty:qty},
         success:function(data){
