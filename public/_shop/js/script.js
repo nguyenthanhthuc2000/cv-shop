@@ -58,7 +58,7 @@ $.ajaxSetup({
 
 function getCartAjax(){
     $.ajax({
-        url: '/load-cart-ajax',
+        url: window.route('cart.load.ajax'),
         method:'POST',
         success:function(data){
             if(data.status === 200){
@@ -120,7 +120,7 @@ $('.btn-add-cart-list').click(function(){
     let qty = 1;
 
      $.ajax({
-        url: urssl,
+        url: window.route('cart.store'),
         method:'POST',
         data:{id:id, qty:qty},
         success:function(data){

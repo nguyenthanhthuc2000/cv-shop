@@ -3,14 +3,12 @@ $.ajaxSetup({
        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
    }
 });
-
 loadCartTotalAjax();
 loadCartTableAjax();
 
 function loadCartTotalAjax(){
-
     $.ajax({
-        url: '/load-cart-total-ajax',
+        url: window.route('cart.total.load.ajax'),
         method:'POST',
         success:function(data){
             if(data.status === 200){
@@ -23,12 +21,13 @@ function loadCartTotalAjax(){
             }
         }
     })
-
 }
+
+
 
 function loadCartTableAjax(){
     $.ajax({
-        url: '/load-cart-table-ajax';
+        url: window.route('cart.table.load.ajax'),
         method:'POST',
         success:function(data){
             if(data.status === 200){
@@ -74,7 +73,7 @@ $(document).on("click",".delete-product-cart",function() {
 //    alert(id);
 
          $.ajax({
-            url: urssl,
+            url: window.route('cart.delete.product'),
             method:'POST',
             data: {id:id},
             success:function(data){
