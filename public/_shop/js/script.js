@@ -58,7 +58,7 @@ $.ajaxSetup({
 
 function getCartAjax(){
     $.ajax({
-        url: window.route('cart.load.ajax'),
+        url: '/load-cart-ajax',
         method:'POST',
         success:function(data){
             if(data.status === 200){
