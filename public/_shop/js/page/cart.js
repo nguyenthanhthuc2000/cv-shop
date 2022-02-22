@@ -23,7 +23,26 @@ function loadCartTotalAjax(){
     })
 }
 
+$('.btn-update-status-order-user').click(function(){
 
+    if(confirm('Xác nhận hủy đơn hàng!')){
+        let id = $(this).data('id')
+         let status = 3
+          $.ajax({
+             url: '/update-order-status',
+             data: {id:id, status:status},
+             method: 'POST',
+             success:function(data) {
+                 if(data.status === 500){
+                     alert('Lỗi, thử lại sau!')
+                 }
+                 else{
+                    location.reload();
+                 }
+             }
+         })
+    }
+})
 
 function loadCartTableAjax(){
     $.ajax({
@@ -113,4 +132,23 @@ $(document).on("change", ".pro-cart-qty", function(){
             }
         }
     })
+})
+
+$('.btn-confirm-store-order').click(function(){
+    let thiss = $(this)
+
+    Swal.fire({
+      title: 'Xác nhận đặt hàng?',
+      text: "",
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Đặt hàng!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+       $('#form-checkout').submit();
+      }
+    })
+
 })

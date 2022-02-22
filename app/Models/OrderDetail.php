@@ -12,4 +12,9 @@ class OrderDetail extends Model
     protected $guarded = [];
     public $timestamps = true;
     protected $perPage = 8;
+
+    public function product(){
+
+        return $this->hasOne(Product::class, 'id', 'product_id');
+    }
 }

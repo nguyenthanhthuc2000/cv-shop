@@ -39,7 +39,9 @@ Route::get('/checkout', [CartController::class, 'checkout'])->name('home.checkou
 
 //DON HANG
 
+Route::post('/update-order-status', [OrderController::class, 'updateStatus'])->name('order.update.status');
 Route::post('/store', [OrderController::class, 'store'])->name('order.store');
+Route::get('/kiem-tra-don-hang', [OrderController::class, 'checkOrder'])->name('order.check');
 
 
 
@@ -52,6 +54,12 @@ Route::get('/san-pham/{catid}', [ProductController::class, 'listProduct'])->name
 Route::middleware(['auth'])->group(function () {
     Route::middleware(['checkLevel'])->group(function () {
         Route::prefix('admin')->group(function () {
+
+
+            //DON HANG
+            Route::get('/quan-li-don-hang', [OrderController::class, 'index'])->name('order.index');
+            Route::get('/xem-chi-tiet-don-hang/{id}', [OrderController::class, 'detail'])->name('order.detail');
+            Route::post('/update-payment-status', [OrderController::class, 'updatePaymentStatus'])->name('order.update.payment.status');
 
             //DASH_BOARD
             Route::get('/', [AdminController::class, 'index'])->name('admin.index');
@@ -88,6 +96,7 @@ Route::middleware(['auth'])->group(function () {
 
             //CHIA SE
             Route::get('/crawl/cayvahoa', [ArticleController::class, 'crawlCayvahoa'])->name('crawl.cayvahoa');
+
             //NEWS
             Route::get('/quan-li-bai-viet', [ArticleController::class, 'index'])->name('news.manage');
             Route::post('/cap-nhat-trang-thai-tin-tuc', [ArticleController::class, 'updateStatus'])->name('news.update.status');
@@ -107,11 +116,11 @@ Route::middleware(['auth'])->group(function () {
             Route::post('/update-dich-vu/{id}', [ServiceController::class, 'update'])->name('service.update');
 
             //LOGO
-            Route::get('/{type}', [ImageController::class, 'imageType'])->name('image.type');
+            Route::get('/jinh-anh/{type}', [ImageController::class, 'imageType'])->name('image.type');
             Route::post('/update-hinh-anh/{id}', [ImageController::class, 'update'])->name('image.update');
 
             //Hinh anh
-            Route::get('/hinh-anh/{typeList}', [ImageController::class, 'listImage'])->name('image.list');
+            Route::get('/danh-sach-hinh-anh/{typeList}', [ImageController::class, 'listImage'])->name('image.list');
             Route::get('/them-moi-hinh-anh/{type}', [ImageController::class, 'create'])->name('image.create');
             Route::post('store-image', [ImageController::class, 'store'])->name('image.store');
             Route::post('/cap-nhat-trang-thai-hinh-anh', [ImageController::class, 'updateStatus'])->name('image.update.status');

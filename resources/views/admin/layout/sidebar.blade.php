@@ -22,7 +22,7 @@
                 </a>
             </li>
             <li class="sidebar-item">
-                <a class="sidebar-link" href="icons-feather.html">
+                <a class="sidebar-link" href="{{ route('order.index') }}">
                     <i class="align-middle" data-feather="coffee"></i> <span class="align-middle">Đơn hàng</span>
                 </a>
             </li>

@@ -104,7 +104,8 @@
 
                         <p class="text"><i class="fa-solid fa-gem"></i> &nbsp; {{ $setting->slogan }}</p>
                         <span class="call"><i class="fa-solid fa-phone mb-3"></i> &nbsp; Liên hệ với chúng tôi 24/7
-                                <br>
+                        </span>
+                        <span  class="call">
                             <a href="tel:{{ $setting->hotline_1 }}">{{ $setting->hotline_1 }}</a>
                             <a>-</a>
                             <a href="tel:{{ $setting->hotline_2 }}">{{ $setting->hotline_2 }}</a>
@@ -120,6 +121,7 @@
                             <li><a href="#">Nạp rút tiền</a></li>
                             <li><a href="#">Hoàn tiền, sản phẩm</a></li>
                             <li><a href="#">Đăng bài viết</a></li>
+                            <li><a href="{{ route('order.check') }}">Kiểm tra đơn hàng</a></li>
                         </ul>
                     </div>
                     <!-- End Single Widget -->

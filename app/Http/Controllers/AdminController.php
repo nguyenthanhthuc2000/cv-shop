@@ -14,7 +14,6 @@ class AdminController extends Controller
     }
 
     public function setting(){
-
         $setting = $this->settingRepo->find(1);
         return view('admin.page.setting.setting', compact('setting'));
     }

@@ -1,13 +1,13 @@
 @extends('shop.layout.master_layout')
 @section('content')
 
-    <form  method="post" action="{{ route('order.store') }}">
+    <form  method="post" action="{{ route('order.store') }}" id="form-checkout">
         @csrf
 
     <!-- Start Checkout -->
     <section class="shop checkout section">
-        @include('admin.layout.alert')
         <div class="container">
+            @include('admin.layout.alert')
             @if(Session::has('carts') && count(Session::get('carts')) > 0)
             <div class="row">
                 <div class="col-lg-8 col-12">
@@ -35,28 +35,28 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="col-lg-6 col-md-6 col-12">
-                                    <div class="form-group">
-                                        <label>Tỉnh / TP</label>
-                                        <select name="province" id="country">
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-12">
-                                    <div class="form-group">
-                                        <label>Quận / huyện</label>
-                                        <select name="district" id="country">
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-12">
-                                    <div class="form-group">
-                                        <label>Phường / xã / thị trấn</label>
-                                        <select name="ward" >
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-12">
+{{--                                <div class="col-lg-6 col-md-6 col-12">--}}
+{{--                                    <div class="form-group">--}}
+{{--                                        <label>Tỉnh / TP</label>--}}
+{{--                                        <select name="province" id="country">--}}
+{{--                                        </select>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-lg-6 col-md-6 col-12">--}}
+{{--                                    <div class="form-group">--}}
+{{--                                        <label>Quận / huyện</label>--}}
+{{--                                        <select name="district" id="country">--}}
+{{--                                        </select>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-lg-6 col-md-6 col-12">--}}
+{{--                                    <div class="form-group">--}}
+{{--                                        <label>Phường / xã / thị trấn</label>--}}
+{{--                                        <select name="ward" >--}}
+{{--                                        </select>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+                                <div class="col-12">
                                     <div class="form-group">
                                         <label>Ghi chú</label>
                                         <input type="text" name="note" placeholder="">
@@ -151,7 +151,7 @@
                         <div class="single-widget get-button">
                             <div class="content">
                                 <div class="button">
-                                    <button class="btn">Xác nhận đặt hàng</button>
+                                    <button type="button" class="btn btn-confirm-store-order">Xác nhận đặt hàng</button>
                                 </div>
                             </div>
                         </div>
