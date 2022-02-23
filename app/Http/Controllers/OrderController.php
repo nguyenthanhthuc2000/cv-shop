@@ -10,13 +10,27 @@ use App\Models\Order;
 class OrderController extends Controller
 {
 
+    public function viewOrder(Request $request){
+
+        $id = encryptDecrypt($request->id, 'decrypt');
+        $order =  $this->orderRepo->find($id);
+        $order_details = $this->orderDetailRepo->getByAttributesAll(['order_code' => $order->order_code]);
+        $output = view('shop.page.cart.component.view_order', compact('order', 'order_details'))->render();
+
+        return response()->json(['output' => $output, 'status' => 200]);
+    }
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function checkOrder(Request $request){
         if($request->phone){
             $orders = [];
             $customer = $this->customerRepo->findByAttributes(['phone' => $request->phone]);
             if($customer){
 
-                $orders =  Order::User($customer->id)->orderby('id','DESC')->get();
+                $orders =  Order::User($customer->id)->orderBy('id','DESC')->get();
             }
 
             return view('shop.page.cart.check_order', compact('orders'));
@@ -85,7 +99,7 @@ class OrderController extends Controller
 
             $order_details = $this->orderDetailRepo->getByAttributesAll(['order_code' => $order->order_code]);
 
-            return view('admin.page.order.order_detail')->with(compact('order_details','order'));
+            return view('admin.page.order.order_detail', compact('order_details','order'));
         }
 
         return redirect()->route('order.index')->with('error', 'Không tìm thấy hóa đơn');

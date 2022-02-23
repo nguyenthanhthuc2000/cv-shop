@@ -42,6 +42,7 @@ Route::get('/checkout', [CartController::class, 'checkout'])->name('home.checkou
 Route::post('/update-order-status', [OrderController::class, 'updateStatus'])->name('order.update.status');
 Route::post('/store', [OrderController::class, 'store'])->name('order.store');
 Route::get('/kiem-tra-don-hang', [OrderController::class, 'checkOrder'])->name('order.check');
+Route::get('/get-order', [OrderController::class, 'viewOrder'])->name('order.view');
 
 
 

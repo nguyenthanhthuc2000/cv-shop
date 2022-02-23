@@ -152,3 +152,23 @@ $('.btn-confirm-store-order').click(function(){
     })
 
 })
+
+
+$('.btn-detail-order').click(function(){
+
+    let id = $(this).data('id')
+    $.ajax({
+        url: '/get-order',
+        method:'GET',
+        data:{id:id},
+        success:function(data){
+            if(data.status === 200){
+                $('#main-order').html(data.output);
+            }
+            else{
+                alert('Lỗi')
+            }
+        }
+    })
+
+})

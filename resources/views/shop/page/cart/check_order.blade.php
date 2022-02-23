@@ -65,7 +65,7 @@
                                         {{ $order->created_at }}
                                     </td>
                                     <td class="text-right">
-                                        <button   class="p-2" style="background: blue; color: #fff;" data-toggle="modal" data-target="#exampleModal">Xem</button>
+                                        <button class="p-2 btn-detail-order" style="background: blue; color: #fff;" data-toggle="modal" data-target="#exampleModal" data-id="{{ encryptDecrypt($order->id) }}">Xem</button>
                                         @if($order->status == 0)
                                         <button class="p-2 btn-update-status-order-user"  data-id="{{ encryptDecrypt($order->id) }}" style="background: red; color: #fff;">Hủy</button>
                                         @endif
@@ -105,39 +105,14 @@
                         <table class="table" style="margin: 70px 30px;">
                                 <thead>
                                 <tr>
-                                    <th scope="col">Mã SP</th>
                                     <th scope="col">Tên SP</th>
-                                    <th scope="col">Hình ảnh</th>
-                                    <th scope="col">Số lượng</th>
-                                    <th scope="col">Giá bán</th>
-                                    <th scope="col">Giá KM</th>
+                                    <th scope="col" class="text-center">Hình ảnh</th>
+                                    <th scope="col" class="text-center">Số lượng</th>
+                                    <th scope="col" class="text-center">Giá bán</th>
+                                    <th scope="col" class="text-right">Giá KM</th>
                                 </tr>
                                 </thead>
-                                <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                </tr>
+                                <tbody id="main-order">
                                 </tbody>
                             </table>
                     </div>

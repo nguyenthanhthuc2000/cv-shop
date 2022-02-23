@@ -17,7 +17,7 @@
                                     <div class="col-12">
                                         <div class="form-group">
                                             <label>Email<span>*</span></label>
-                                            <input name="email" class="form-control" minlength="10" maxlength="65" type="email" placeholder="">
+                                            <input name="email" class="form-control" minlength="10" maxlength="65" type="email" placeholder="" required>
                                             @error('email')
                                             <small style="color:red;    text-transform: capitalize;">{{ $message }}</small>
                                             @enderror
@@ -26,7 +26,7 @@
                                     <div class="col-12">
                                         <div class="form-group">
                                             <label>Mật khẩu<span>*</span></label>
-                                            <input name="password" class="form-control"  minlength="6" type="password" placeholder="">
+                                            <input name="password" class="form-control"  minlength="6" type="password" placeholder="" required>
                                             @error('password')
                                             <small style="color:red;    text-transform: capitalize;">{{ $message }}</small>
                                             @enderror
@@ -44,9 +44,9 @@
                     <div class="col-lg-8 col-12 mb-3">
                         <div class="form-main">
                             <div class="title">
-                                <h4>Đăng ký - Họ tên và Email không thể thay đổi</h4>
+                                <h4>Đăng ký - Chưa phát triển chức năng này</h4>
                             </div>
-                            <form class="form" method="post" action="">
+                            <form class="form" >
                                 @csrf
                                 <div class="row">
                                     <div class="col-lg-6 col-12">
