@@ -26,7 +26,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title mb-4">Tổng sản phẩm</h5>
-                                    <h1 class="display-5 mt-1 mb-3">2.382</h1>
+                                    <h1 class="display-5 mt-1 mb-3">---</h1>
                                     <div class="mb-1">
 {{--                                        <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -3.65% </span>--}}
 {{--                                        <span class="text-muted">Since last week</span>--}}
@@ -38,7 +38,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title mb-4">Doanh thu</h5>
-                                    <h1 class="display-5 mt-1 mb-3">2.382</h1>
+                                    <h1 class="display-5 mt-1 mb-3">---</h1>
                                     <div class="mb-1">
 {{--                                        <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -3.65% </span>--}}
 {{--                                        <span class="text-muted">Since last week</span>--}}
@@ -50,7 +50,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title mb-4">Đơn hàng</h5>
-                                    <h1 class="display-5 mt-1 mb-3">2.382</h1>
+                                    <h1 class="display-5 mt-1 mb-3">---</h1>
                                     <div class="mb-1">
 {{--                                        <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -3.65% </span>--}}
 {{--                                        <span class="text-muted">Since last week</span>--}}
@@ -62,7 +62,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title mb-4">Doanh thu tin tức</h5>
-                                    <h1 class="display-5 mt-1 mb-3">2.382</h1>
+                                    <h1 class="display-5 mt-1 mb-3">---</h1>
                                     <div class="mb-1">
 {{--                                        <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -3.65% </span>--}}
 {{--                                        <span class="text-muted">Since last week</span>--}}

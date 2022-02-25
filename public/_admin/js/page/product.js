@@ -20,7 +20,7 @@ $('.btn-status-product').click(function() {
     let status = 0;
     if($(this).prop('checked') ? status = 1 : status = 0);
     $.ajax({
-        url: window.route('product.update.status'),
+        url: 'cap-nhat-trang-thai-san-pham',
         data: {id:id, status:status},
         method: 'POST',
         success:function(data) {
@@ -35,7 +35,7 @@ $('.btn-highlights-product').click(function() {
     let highlights = 0;
     if($(this).prop('checked') ? highlights = 1 : highlights = 0);
     $.ajax({
-        url: window.route('product.update.highlights'),
+        url: 'cap-nhat-highlights-san-pham',
         data: {id:id, highlights:highlights},
         method: 'POST',
         success:function(data) {

@@ -9,7 +9,7 @@ $('.btn-status-news').click(function() {
     let status = 0;
     if($(this).prop('checked') ? status = 1 : status = 0);
     $.ajax({
-        url: window.route('news.update.status'),
+        url: 'cap-nhat-trang-thai-tin-tuc',
         data: {id:id, status:status},
         method: 'POST',
         success:function(data) {

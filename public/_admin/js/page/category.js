@@ -28,7 +28,7 @@ $('.btn-status-category').click(function() {
     let status = 0;
     if($(this).prop('checked') ? status = 1 : status = 0);
     $.ajax({
-        url: window.route('category.update.status'),
+        url: 'cap-nhat-trang-thai-danh-muc',
         data: {id:id, status:status},
         method: 'POST',
         success:function(data) {
