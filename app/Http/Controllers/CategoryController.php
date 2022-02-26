@@ -46,16 +46,29 @@ class CategoryController extends Controller
     public function destroy($id){
         $id = encryptDecrypt($id, 'decrypt');
         $category = $this->categoryRepo->find($id);
+        $catLevel = 'category1_id';
+
         if($category) {
-            $level = $category->level;
-            $query = $this->categoryRepo->delete($id);
 
-            if($query){
+            if($category->level == 2){
+                $catLevel = 'category2_id';
+            }
+            $checkCategory = $this->productRepo->getByAttributesAll([ $catLevel => $category->id]);
 
-                return redirect()->back()->with('success', 'Xóa danh mục thành công!');
+            if($checkCategory->count() == 0) {
+
+                $level = $category->level;
+                $query = $this->categoryRepo->delete($id);
+
+                if($query){
+
+                    return redirect()->back()->with('success', 'Xóa danh mục thành công!');
+                }
+
+                return redirect()->back()->with('error', 'Vui lòng thử lại sau!');
             }
 
-            return redirect()->back()->with('error', 'Vui lòng thử lại sau!');
+            return redirect()->back()->with('error', 'Danh mục này đã có sản phẩm, không xóa');
         }
 
         return redirect()->back()->with('error', 'Vui lòng thử lại sau!');

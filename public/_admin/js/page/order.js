@@ -12,7 +12,7 @@ $('.order_status').change(function() {
         var status = $('.order_status :selected').val();
 
         $.ajax({
-            url: 'update-order-status',
+            url: window.route('order.update.status'),
             data: {id:id, status:status},
             method: 'POST',
             success:function(data) {
@@ -31,7 +31,7 @@ $('.order_payment_status').change(function() {
         let status = $('.order_payment_status :selected').val();
 
         $.ajax({
-            url: 'update-payment-status',
+            url: window.route('order.update.payment.status'),
             data: {id:id, status:status},
             method: 'POST',
             success:function(data) {

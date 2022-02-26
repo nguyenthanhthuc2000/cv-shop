@@ -8,7 +8,7 @@ loadCartTableAjax();
 
 function loadCartTotalAjax(){
     $.ajax({
-        url: 'load-cart-total-ajax',
+        url: window.route('cart.total.load.ajax'),
         method:'POST',
         success:function(data){
             if(data.status === 200){
@@ -29,7 +29,7 @@ $('.btn-update-status-order-user').click(function(){
         let id = $(this).data('id')
          let status = 3
           $.ajax({
-             url: 'update-order-status',
+             url: window.route('order.update.status'),
              data: {id:id, status:status},
              method: 'POST',
              success:function(data) {
@@ -67,7 +67,7 @@ $(document).on("click",".btn-add-voucher",function() {
         alert('Vui lòng nhập mã giảm giá')
     }
      $.ajax({
-        url: 'add-voucher',
+        url: window.route('voucher.add'),
         method:'POST',
         data: {voucher:voucher},
         success:function(data){
@@ -92,7 +92,7 @@ $(document).on("click",".delete-product-cart",function() {
 //    alert(id);
 
          $.ajax({
-            url: 'cart-delete-product',
+            url: window.route('cart.delete.product'),
             method:'POST',
             data: {id:id},
             success:function(data){
@@ -117,7 +117,7 @@ $(document).on("change", ".pro-cart-qty", function(){
     var qty = $(this).val();
     var id = $(this).data('id');
      $.ajax({
-        url: 'update-qty-product',
+        url: window.route('update.qty.product'),
         method:'POST',
         data:{id:id, qty:qty},
         success:function(data){

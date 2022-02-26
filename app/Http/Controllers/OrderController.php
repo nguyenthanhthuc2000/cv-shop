@@ -196,7 +196,7 @@ class OrderController extends Controller
                 Session::forget('carts');
                 Session::forget('voucher');
 
-                return redirect()->back()->with('success', 'Cảm ơn đã đặt hàng, chúng tôi sẽ liên hệ đến bạn để xác nhận đơn hàng!');
+                return redirect()->back()->with('successOrder', "Cảm ơn đã đặt hàng, chúng tôi sẽ liên hệ đến bạn để xác nhận đơn hàng! Kiểm tra đơn hàng");
 
             } catch (\Exception $e){
 

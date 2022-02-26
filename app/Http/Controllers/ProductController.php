@@ -54,17 +54,25 @@ class ProductController extends Controller
         $id = encryptDecrypt($id, 'decrypt');
         $product = $this->productRepo->find($id);
         $photo = $product->photo;
-        if($product){
-            $query = $this->productRepo->delete($id);
-            if($query){
-                //xóa hình cũ
-                if (File::exists(public_path() . "/uploads/product/" . $photo)) {
-                    File::delete(public_path() . "/uploads/product/" . $photo);
+
+        if($product) {
+
+            $checkProducts = $this->orderDetailRepo->getByAttributesAll(['product_id' => $product->id]);
+
+            if ($checkProducts->count() == 0) {
+                $query = $this->productRepo->delete($id);
+                if ($query) {
+                    //xóa hình cũ
+                    if (File::exists(public_path() . "/uploads/product/" . $photo)) {
+                        File::delete(public_path() . "/uploads/product/" . $photo);
+                    }
+                    return redirect()->back()->with('success', 'Xóa thành công!');
                 }
-                return redirect()->back()->with('success', 'Xóa thành công!');
+
+                return redirect()->back()->with('error', 'Vui lòng thử lại sau!');
             }
 
-            return redirect()->back()->with('error', 'Vui lòng thử lại sau!');
+            return redirect()->back()->with('error', 'Sản phẩm đã được bán ra vui lòng không xóa!');
         }
 
         return redirect()->back()->with('error', 'Không tìm thấy sản phẩm!');

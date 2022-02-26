@@ -66,13 +66,18 @@ class VoucherController extends Controller
         $id = encryptDecrypt($id, 'decrypt');
         $voucher = $this->voucherRepo->find($id);
         if($voucher) {
-            $query = $this->voucherRepo->delete($id);
-            if($query){
+            $checkVoucher = $this->orderRepo->getByAttributesAll(['voucher_id' => $voucher->id]);
+            if ($checkVoucher->count() == 0){
+                $query = $this->voucherRepo->delete($id);
+            if ($query) {
 
                 return redirect()->back()->with('success', 'Xóa mã giảm giá thành công!');
             }
 
-            return redirect()->back()->with('error', 'Vui lòng thử lại sau!');
+                return redirect()->back()->with('error', 'Vui lòng thử lại sau!');
+            }
+
+            return redirect()->back()->with('error', 'Mã giảm giá đã được dùng, không xóa nha');
         }
 
         return redirect()->back()->with('error', 'Vui lòng thử lại sau!');

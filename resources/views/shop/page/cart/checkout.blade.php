@@ -8,6 +8,17 @@
     <section class="shop checkout section">
         <div class="container">
             @include('admin.layout.alert')
+            @if(Session::has('successOrder'))
+                <div class="alert alert-success alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <div class="alert-message">
+                        <strong>Success!</strong> <span>Cảm ơn đã đặt hàng, chúng tôi sẽ liên hệ đến bạn để xác nhận đơn hàng! Kiểm tra đơn hàng
+                        <a href="{{ route('order.check') }}" style="color: blue;">tại đây</a></span>
+                    </div>
+                </div>
+            @endif
             @if(Session::has('carts') && count(Session::get('carts')) > 0)
             <div class="row">
                 <div class="col-lg-8 col-12">

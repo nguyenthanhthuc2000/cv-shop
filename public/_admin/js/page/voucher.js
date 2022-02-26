@@ -9,7 +9,7 @@ $('.btn-status-voucher').click(function() {
     let status = 0;
     if($(this).prop('checked') ? status = 1 : status = 0);
     $.ajax({
-        url: 'cap-nhat-trang-thai-voucher',
+        url: window.route('voucher.update.status'),
         data: {id:id, status:status},
         method: 'POST',
         success:function(data) {

@@ -118,9 +118,9 @@
                     <div class="single-footer links">
                         <h4>Chính sách</h4>
                         <ul>
-                            <li><a href="#">Nạp rút tiền</a></li>
-                            <li><a href="#">Hoàn tiền, sản phẩm</a></li>
-                            <li><a href="#">Đăng bài viết</a></li>
+                            <li><a href="#">Returns</a></li>
+                            <li><a href="#">Shipping</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
                             <li><a href="{{ route('order.check') }}">Kiểm tra đơn hàng</a></li>
                         </ul>
                     </div>

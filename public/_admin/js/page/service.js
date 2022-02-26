@@ -9,7 +9,7 @@ $('.btn-status-service').click(function() {
     let status = 0;
     if($(this).prop('checked') ? status = 1 : status = 0);
     $.ajax({
-        url: 'cap-nhat-trang-thai-dich-vu',
+        url: window.route('service.update.status'),
         data: {id:id, status:status},
         method: 'POST',
         success:function(data) {
