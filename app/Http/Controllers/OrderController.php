@@ -189,8 +189,7 @@ class OrderController extends Controller
                 'voucher_id' => $voucherID,
                 'method_checkout' => $request->method_checkout
             ];
-//            dd($order);
-
+            
             try {
                 $queryOrder = $this->orderRepo->create($order);
                 Session::forget('carts');
