@@ -189,12 +189,11 @@ class OrderController extends Controller
                 'voucher_id' => $voucherID,
                 'method_checkout' => $request->method_checkout
             ];
-            
+
             try {
                 $queryOrder = $this->orderRepo->create($order);
                 Session::forget('carts');
                 Session::forget('voucher');
-
                 return redirect()->back()->with('successOrder', "Cảm ơn đã đặt hàng, chúng tôi sẽ liên hệ đến bạn để xác nhận đơn hàng! Kiểm tra đơn hàng");
 
             } catch (\Exception $e){
