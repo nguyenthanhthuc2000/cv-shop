@@ -53,13 +53,13 @@
             }
         @endphp
     <tr>
-        <td colspan="2"></td>
+        <td colspan="3"></td>
         <td colspan="2" class="text-left">Giảm giá</td>
         <td class="text-right">{{ numberFormat($totalVoucher) }} vnđ</td>
     </tr>
     @endif
     <tr>
-        <td colspan="2"></td>
+        <td colspan="3"></td>
         <td colspan="2" class="text-left">Tổng thanh toán</td>
         <td class="text-right">{{ numberFormat($order->total) }} vnđ</td>
     </tr>
