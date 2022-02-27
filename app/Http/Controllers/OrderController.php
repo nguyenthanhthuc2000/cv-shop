@@ -10,6 +10,10 @@ use App\Models\Order;
 class OrderController extends Controller
 {
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function viewOrder(Request $request){
 
         $id = encryptDecrypt($request->id, 'decrypt');
@@ -190,13 +194,13 @@ class OrderController extends Controller
                 'method_checkout' => $request->method_checkout
             ];
 
-            try {
-                $queryOrder = $this->orderRepo->create($order);
+            $queryOrder = $this->orderRepo->create($order);
+            if($queryOrder){
                 Session::forget('carts');
                 Session::forget('voucher');
                 return redirect()->back()->with('successOrder', "Cảm ơn đã đặt hàng, chúng tôi sẽ liên hệ đến bạn để xác nhận đơn hàng! Kiểm tra đơn hàng");
 
-            } catch (\Exception $e){
+            }else{
 
                 return redirect()->back()->with('error', 'Lỗi');
             }
