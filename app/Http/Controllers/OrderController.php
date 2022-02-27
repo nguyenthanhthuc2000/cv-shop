@@ -114,7 +114,6 @@ class OrderController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request){
-
         if(Session::has('carts') && count(Session::get('carts')) > 0){
             $validator = Validator::make($request->all(), [
                 'address' => ['required'],
@@ -135,10 +134,10 @@ class OrderController extends Controller
                     'phone' => $request->phone
                 ];
 
-                $customerUser = $this->customerRepo->create($customerData);
-               if($customerUser){
+                try {
+                    $customerUser = $this->customerRepo->create($customerData);
                     $customerID = $customerUser->id;
-                } else{
+                } catch (\Exception $e){
 
                     return redirect()->back()->with('error', 'Lỗi');
                 }
@@ -195,13 +194,13 @@ class OrderController extends Controller
                 'method_checkout' => $request->method_checkout
             ];
 
-            $queryOrder = $this->orderRepo->create($order);
-            if($queryOrder){
+            try{
+                $this->orderRepo->create($order);
                 Session::forget('carts');
                 Session::forget('voucher');
                 return redirect()->back()->with('successOrder', "Cảm ơn đã đặt hàng, chúng tôi sẽ liên hệ đến bạn để xác nhận đơn hàng! Kiểm tra đơn hàng");
 
-            }else{
+            } catch (\Exception $e){
 
                 return redirect()->back()->with('error', 'Lỗi');
             }
