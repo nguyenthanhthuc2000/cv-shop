@@ -110,6 +110,7 @@
                                     <th scope="col" class="text-center">Số lượng</th>
                                     <th scope="col" class="text-center">Giá bán</th>
                                     <th scope="col" class="text-right">Giá KM</th>
+                                    <th scope="col" class="text-right">Tổng</th>
                                 </tr>
                                 </thead>
                                 <tbody id="main-order">

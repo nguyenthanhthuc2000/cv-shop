@@ -12,6 +12,16 @@
         <td class="text-center">{{ $o->product_qty }}</td>
         <td class="text-center">{{ numberFormat($o->price) }}</td>
         <td class="text-right">{{ numberFormat($o->price_pro) }}</td>
+        <td class="text-right">
+            @php
+            $price = $o->price;
+                if($o->price_pro > 0){
+                    $price = $o->price_pro;
+                }
+            @endphp
+            {{ numberFormat($price * $o->product_qty) }}
+        </td>
+
     </tr>
 
         @php
@@ -25,7 +35,7 @@
         @endphp
     @endforeach
     <tr>
-        <td colspan="2"></td>
+        <td colspan="3"></td>
         <td colspan="2" class="text-left">Tổng hóa đơn</td>
         <td class="text-right">{{ numberFormat($totalCart) }} vnđ</td>
     </tr>
