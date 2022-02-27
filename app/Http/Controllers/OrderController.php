@@ -114,6 +114,7 @@ class OrderController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request){
+
         if(Session::has('carts') && count(Session::get('carts')) > 0){
             $validator = Validator::make($request->all(), [
                 'address' => ['required'],
@@ -134,10 +135,10 @@ class OrderController extends Controller
                     'phone' => $request->phone
                 ];
 
-                try {
-                    $customerUser = $this->customerRepo->create($customerData);
+                $customerUser = $this->customerRepo->create($customerData);
+               if($customerUser){
                     $customerID = $customerUser->id;
-                } catch (\Exception $e){
+                } else{
 
                     return redirect()->back()->with('error', 'Lỗi');
                 }
@@ -207,6 +208,6 @@ class OrderController extends Controller
 
         }
 
-        return redirect()->back();
+        return redirect()->back()->with('error', 'Lỗi');
     }
 }
