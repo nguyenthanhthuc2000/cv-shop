@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://nguyenthanhthuc.cf/'),
+    'url' => env('APP_URL', null),
 
     'asset_url' => env('ASSET_URL', null),
 
