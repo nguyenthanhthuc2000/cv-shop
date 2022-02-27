@@ -101,7 +101,6 @@
                         <div class="logo">
                             <a href="{{ route('home.index') }}"><img style="width: 50%;" src="{{ asset('_shop/images/logo_footer.png')}}" alt="#"></a>
                         </div>
-
                         <p class="text"><i class="fa-solid fa-gem"></i> &nbsp; {{ $setting->slogan }}</p>
                         <span class="call"><i class="fa-solid fa-phone mb-3"></i> &nbsp; Liên hệ với chúng tôi 24/7
                         </span>
