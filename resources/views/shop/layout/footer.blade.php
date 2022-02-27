@@ -123,10 +123,8 @@
                             <li><a href="{{ route('order.check') }}">Kiểm tra đơn hàng</a></li>
                         </ul>
                     </div>
-                    <!-- End Single Widget -->
                 </div>
                 <div class="col-lg-2 col-md-6 col-12">
-                    <!-- Single Widget -->
                     <div class="single-footer links">
                         <h4>Sản phẩm</h4>
                         <ul>
